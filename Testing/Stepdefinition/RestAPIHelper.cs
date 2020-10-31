@@ -1,5 +1,6 @@
 ﻿using RestSharp;
 using System.IO;
+using Testing.Data;
 
 namespace Testing.Stepdefinition
 {
@@ -32,7 +33,7 @@ namespace Testing.Stepdefinition
 
         public static IRestResponse GetResponse(string content, string corr, string reqid, string token, string encoding, string conn)
         {
-            StreamWriter writer = new StreamWriter("C:\\Users\\abhishek.k\\source\\repos\\Testing\\Testing\\Output\\output.txt");
+            StreamWriter writer = new StreamWriter("C:\\Users\\abhishek.kulkarni\\My Folder\\Practice\\APITesting\\Testing\\Output\\output.txt");
             var response = rc.Execute(rq);
             writer.Write(response.Content.ToString());
             writer.Close();

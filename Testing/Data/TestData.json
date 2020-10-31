@@ -1,0 +1,5 @@
+{
+  "url": "https://api.tmsandbox.co.nz/",
+  "request": "v1/Categories/6327/Details.json",
+  "header":  "Content-Type"
+}

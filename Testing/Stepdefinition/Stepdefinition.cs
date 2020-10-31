@@ -3,6 +3,7 @@ using TechTalk.SpecFlow;
 using NUnit.Framework;
 using System.IO;
 using Newtonsoft.Json.Linq;
+using Testing.Data;
 
 namespace Testing.Stepdefinition
 {
@@ -27,8 +28,8 @@ namespace Testing.Stepdefinition
         {
             var response = RestAPIHelper.GetResponse(content, corr, reqid, token, encoding, conn);
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK), "The response has failed");
-            Assert.That(response.ContentType, Is.EqualTo("application/json"));
-            StreamReader reader = new StreamReader("C:\\Users\\abhishek.k\\source\\repos\\Testing\\Testing\\Output\\output.txt");
+            Assert.That(response.ContentType, Is.EqualTo(content));
+            StreamReader reader = new StreamReader("C:\\Users\\abhishek.kulkarni\\My Folder\\Practice\\APITesting\\Testing\\Output\\output.txt");
             JObject result = JObject.Parse(reader.ReadToEnd());
             string value = result["Name"].Value<string>();
             Assert.AreEqual("Carbon credits", value, "The value is not as expected");
@@ -40,8 +41,8 @@ namespace Testing.Stepdefinition
         {
             var response = RestAPIHelper.GetResponse(content, corr, reqid, token, encoding, conn);
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK), "The response has failed");
-            Assert.That(response.ContentType, Is.EqualTo("application/json"));
-            StreamReader reader = new StreamReader("C:\\Users\\abhishek.k\\source\\repos\\Testing\\Testing\\Output\\output.txt");
+            Assert.That(response.ContentType, Is.EqualTo(content));
+            StreamReader reader = new StreamReader("C:\\Users\\abhishek.kulkarni\\My Folder\\Practice\\APITesting\\Testing\\Output\\output.txt");
             JObject result = JObject.Parse(reader.ReadToEnd());
             string value = result["CanRelist"].Value<string>();
             Assert.AreEqual("True", value, "The value is not as expected");
@@ -53,8 +54,8 @@ namespace Testing.Stepdefinition
         {
             var response = RestAPIHelper.GetResponse(content, corr, reqid, token, encoding, conn);
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK), "The response has failed");
-            Assert.That(response.ContentType, Is.EqualTo("application/json"));
-            StreamReader reader = new StreamReader("C:\\Users\\abhishek.k\\source\\repos\\Testing\\Testing\\Output\\output.txt");
+            Assert.That(response.ContentType, Is.EqualTo(content));
+            StreamReader reader = new StreamReader("C:\\Users\\abhishek.kulkarni\\My Folder\\Practice\\APITesting\\Testing\\Output\\output.txt");
             JObject result = JObject.Parse(reader.ReadToEnd());
             string value = result["Promotions"][1]["Name"].Value<string>();
             Assert.AreEqual("Gallery", value, "The value is not as expected");

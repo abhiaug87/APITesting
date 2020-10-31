@@ -78,6 +78,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Scenarios.feature</DependentUpon>
     </Compile>
+    <Compile Include="Data\JSONReader.cs" />
     <Compile Include="Stepdefinition\RestAPIHelper.cs" />
     <Compile Include="Stepdefinition\Stepdefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +90,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Scenarios.feature.cs</LastGenOutput>
     </None>
+    <None Include="Data\TestData.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Output\" />
