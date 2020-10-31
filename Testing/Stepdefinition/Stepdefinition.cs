@@ -60,7 +60,8 @@ namespace Testing.Stepdefinition
             string value = result["Promotions"][1]["Name"].Value<string>();
             Assert.AreEqual("Gallery", value, "The value is not as expected");
             string desc = result["Promotions"][1]["Description"].Value<string>();
-            Assert.IsTrue(desc.Contains("2x larger image"), "The values does not match as expected", desc);
+            // Assert.IsTrue(desc.Contains("2x larger image"), "The values does not match as expected", desc);
+            Assert.IsTrue(desc.Contains("Good position in category"), "The values does not match as expected", desc);
             reader.Dispose();
         }
 
