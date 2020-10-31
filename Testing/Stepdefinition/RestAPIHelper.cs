@@ -33,7 +33,8 @@ namespace Testing.Stepdefinition
 
         public static IRestResponse GetResponse(string content, string corr, string reqid, string token, string encoding, string conn)
         {
-            StreamWriter writer = new StreamWriter("C:\\Users\\abhishek.kulkarni\\My Folder\\Practice\\APITesting\\Testing\\Output\\output.txt");
+            string filepath = Path.GetFullPath("output.txt");
+            StreamWriter writer = new StreamWriter(filepath);
             var response = rc.Execute(rq);
             writer.Write(response.Content.ToString());
             writer.Close();
