@@ -27,7 +27,7 @@ namespace Testing.Stepdefinition
         [Then(@"I am able to see the category name with headers (.*), (.*), (.*), (.*), (.*) and (.*)")]
         public void ThenIAmAbleToSeeTheCategoryNameWithHeadersAnd(string content, string corr, string reqid, string token, string encoding, string conn)
         {
-            string filepath = Path.GetFullPath("output.txt");
+            var filepath = Path.GetFileName("output.txt");
             var response = RestAPIHelper.GetResponse(content, corr, reqid, token, encoding, conn);
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK), "The response has failed");
             Assert.That(response.ContentType, Is.EqualTo(content));
@@ -41,7 +41,7 @@ namespace Testing.Stepdefinition
         [Then(@"I am able to see the canrelist status with headers (.*), (.*), (.*), (.*), (.*) and (.*)")]
         public void ThenIAmAbleToSeeTheCanrelistStatusWithHeadersAnd(string content, string corr, string reqid, string token, string encoding, string conn)
         {
-            string filepath = Path.GetFullPath("output.txt");
+            var filepath = Path.GetFileName("output.txt");
             var response = RestAPIHelper.GetResponse(content, corr, reqid, token, encoding, conn);
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK), "The response has failed");
             Assert.That(response.ContentType, Is.EqualTo(content));
@@ -55,7 +55,7 @@ namespace Testing.Stepdefinition
         [Then(@"I am able to see the promotions name with headers (.*), (.*), (.*), (.*), (.*) and (.*)")]
         public void ThenIAmAbleToSeeThePromotionsNameWithHeadersAnd(string content, string corr, string reqid, string token, string encoding, string conn)
         {
-            string filepath = Path.GetFullPath("output.txt");
+            var filepath = Path.GetFileName("output.txt");
             var response = RestAPIHelper.GetResponse(content, corr, reqid, token, encoding, conn);
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK), "The response has failed");
             Assert.That(response.ContentType, Is.EqualTo(content));

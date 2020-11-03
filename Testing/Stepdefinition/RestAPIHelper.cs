@@ -33,7 +33,8 @@ namespace Testing.Stepdefinition
 
         public static IRestResponse GetResponse(string content, string corr, string reqid, string token, string encoding, string conn)
         {
-            string filepath = Path.GetFullPath("output.txt");
+            var filepath = Path.GetFileName("output.txt");
+            //StreamWriter writer = new StreamWriter(System.Environment.CurrentDirectory + "output.txt");
             StreamWriter writer = new StreamWriter(filepath);
             var response = rc.Execute(rq);
             writer.Write(response.Content.ToString());
