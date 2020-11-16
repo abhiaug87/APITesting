@@ -7,15 +7,14 @@ namespace Testing.Stepdefinition
     
     public static class RestAPIHelper
     {
+        static JSON read = new JSON();
         public static RestClient rc;
         public static RestRequest rq;
-        public static string url = "https://api.tmsandbox.co.nz/";
-        static JSON read = new JSON();
+        public static string url = read.jr("../Testing/Data/TestData.json", "url");
 
         public static RestClient Url()
         {
-
-            var url = "https://api.tmsandbox.co.nz/";
+            var url = read.jr("../Testing/Data/TestData.json", "url");
             return rc = new RestClient(url);
         }
 
