@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Testing.Data
 {
-    class JSONReader
+    class JSON
     {
         public string jr(string fileName, object itemName)
         {
