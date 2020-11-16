@@ -10,6 +10,7 @@ namespace Testing.Stepdefinition
         public static RestClient rc;
         public static RestRequest rq;
         public static string url = "https://api.tmsandbox.co.nz/";
+        static JSON read = new JSON();
 
         public static RestClient Url()
         {
@@ -19,8 +20,7 @@ namespace Testing.Stepdefinition
         }
 
         public static RestRequest parameters(string content, string corr, string reqid, string token, string encoding, string conn)
-        {
-            JSON read = new JSON();   
+        {  
             rc = new RestClient(url);
            // rq = new RestRequest("v1/Categories/6327/Details.json", Method.GET);
             rq = new RestRequest(read.jr("../Testing/Data/TestData.json", "endpoint"), Method.GET); 
