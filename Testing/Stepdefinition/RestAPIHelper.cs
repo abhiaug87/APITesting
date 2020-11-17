@@ -21,7 +21,6 @@ namespace Testing.Stepdefinition
         public static RestRequest parameters(string content, string corr, string reqid, string token, string encoding, string conn)
         {  
             rc = new RestClient(url);
-           // rq = new RestRequest("v1/Categories/6327/Details.json", Method.GET);
             rq = new RestRequest(read.jr("../Testing/Data/TestData.json", "endpoint"), Method.GET); 
             rq.AddHeader("Content-Type", content);
             rq.AddParameter(new Parameter("X-Correlation-ID", corr, ParameterType.GetOrPost));
